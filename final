@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 
 ## Content is important! {.vcenter}
-In this presentation you will know how to create ~~cool~~ project for the productivity tools classes and how easy it is to do!  
+In this presentation you will find out how to create a ~~cool~~ project for the productivity tools class, and how easy it is to do!  
 
 First of all let's find out what a solid project should contain:  
 
@@ -23,21 +23,21 @@ First of all let's find out what a solid project should contain:
 We'll look at each of them in more detail, do not worry.
 
 
-## But how can I do this complicated things?
+## But how can I do these complicated things?
 
-For all of this we gonna use R Markdown.  
-I will not describe all the advantages of R Markdown,
+For all of this we going to use R Markdown.  
+We will not describe all the advantages of R Markdown,
 because the purpose of this presentation is to teach you how to make a project.
 
 If you want to learn more about R Markdown, just Google it. 
 There is a lot of information and documentation on the web that will help you.  
 Or just click [here.](http://letmegooglethat.com/?q=What+is+Rmarkdown%3F)  
-Also, at the end of this presentation, there will be a link to the github repository, where you can find the source code of this presentation and several useful cheatsheets.
+At the end of this presentation, there will be a github repository link, where you can find the source code of this presentation, and several useful cheatsheets.
 
 ## Interactive plot {.smaller}
 
 <font size="3">
-The main advantage of interactive plot is the ability ~~to do things~~ to interact(zoom in, review individual sections, and so on.) with plot.
+The main advantage of an interactive plot is the ability ~~to do things~~ to interact(zoom in, review individual sections, and so on.) with plot.
 </font>
 
 ```{r warning = FALSE}
@@ -51,14 +51,14 @@ p <- ggplot(data = iris,
 ggplotly(p = p)
 ```
 <font size="2">
-**Source code of this presentation could be found at the end of presentation.**
+**Source code of this presentation can be found at the end of this presentation.**
 </font>
 
 ## Map {.smaller}
 
 <font size="3">
-Here is the simple example of interactive map(which was buildedalso with basic R dataset). Unfortunately there is only one basic R data set with coordinates.  
-So if you want to portray something different you will have to search for data.
+Here is a simple example of an interactive map(which was built also with basic R dataset). Unfortunately there is only one basic R data set with coordinates.  
+So if you want to portray something different, you will have to search for data.
 </font>
 
 ```{r}
@@ -75,7 +75,7 @@ leaflet(data = quakes[1:50,]) %>%
 
 ## Table {.smaller}
 
-And here is the example of interactive table with basic R data set.
+And here is the example of an interactive table with basic R data set.
 
 ```{r}
 
@@ -91,7 +91,7 @@ datatable(data = swiss,
 
 Yes, it is!
 If you are familiar with the tools and packages that were used here, then creating such a presentation will take you no more than half an hour.  
-And, as a begginers, who met all these things for the first time, we can assure you that **you are also capable of doing this**!  
+As beginners, who  saw all these things for the first time, we can assure you that **you are also capable of doing this**!  
   
 The source code of this presentation, as well as some additional materials, can be found in the [github repository.](https://github.com/jupiter888/prodtoolsproject)
 
