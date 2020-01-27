@@ -1,6 +1,100 @@
-Productivity tools project on github
+---
+title: "How to make a Productivity Tool's project"
+author: "E. Kren, D. Tracy"
+output: 
+  ioslides_presentation:
+  smaller: true
+---
 
-r studio to display data about a chosen topic. 
-demonstrate efficient r studio coding, and displaying results using rstudio
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
 
-Bee data or ocean data is desired to report
+
+## Content is important! {.vcenter}
+In this presentation you will know how to create ~~cool~~ project for the productivity tools classes and how easy it is to do!  
+
+First of all let's find out what a solid project should contain:  
+
+* Some kind of interactive plot
+* A map
+* A table  
+
+We'll look at each of them in more detail, do not worry.
+
+
+## But how can I do this complicated things?
+
+For all of this we gonna use R Markdown.  
+I will not describe all the advantages of R Markdown,
+because the purpose of this presentation is to teach you how to make a project.
+
+If you want to learn more about R Markdown, just Google it. 
+There is a lot of information and documentation on the web that will help you.  
+Or just click [here.](http://letmegooglethat.com/?q=What+is+Rmarkdown%3F)  
+Also, at the end of this presentation, there will be a link to the github repository, where you can find the source code of this presentation and several useful cheatsheets.
+
+## Interactive plot {.smaller}
+
+<font size="3">
+The main advantage of interactive plot is the ability ~~to do things~~ to interact(zoom in, review individual sections, and so on.) with plot.
+</font>
+
+```{r warning = FALSE}
+library(ggplot2)
+library(plotly, warn.conflicts = FALSE)
+
+p <- ggplot(data = iris, 
+            mapping = aes(x = Species, y = Sepal.Length)) +
+  geom_bar(position = 'dodge', stat = "identity")
+
+ggplotly(p = p)
+```
+<font size="2">
+**Source code of this presentation could be found at the end of presentation.**
+</font>
+
+## Map {.smaller}
+
+<font size="3">
+Here is the simple example of interactive map(which was buildedalso with basic R dataset). Unfortunately there is only one basic R data set with coordinates.  
+So if you want to portray something different you will have to search for data.
+</font>
+
+```{r}
+library(leaflet)
+library(magrittr)
+
+leaflet(data = quakes[1:50,]) %>% 
+  addTiles() %>%
+  addMarkers(lng = ~long, 
+             lat = ~lat, 
+             popup = ~as.character(x = mag), 
+             label = ~as.character(x = mag))
+```
+
+## Table {.smaller}
+
+And here is the example of interactive table with basic R data set.
+
+```{r}
+
+library(DT)
+
+datatable(data = swiss,
+          options = list(pageLength = 10),
+          class = 'cell-border stripe',
+          editable = 'cell')
+```
+
+## Is that it?
+
+Yes, it is!
+If you are familiar with the tools and packages that were used here, then creating such a presentation will take you no more than half an hour.  
+And, as a begginers, who met all these things for the first time, we can assure you that **you are also capable of doing this**!  
+  
+The source code of this presentation, as well as some additional materials, can be found in the [github repository.](https://github.com/jupiter888/prodtoolsproject)
+
+<font size="7">
+**Thank you for your attention!**
+</font>
